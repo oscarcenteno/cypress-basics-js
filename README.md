@@ -20,5 +20,5 @@ https://github.com/oscarcenteno/cypress-basics-js/blob/main/.github/workflows/cy
  <!-- badge links follow -->
 [ci-badge]: https://github.com/oscarcenteno/cypress-basics-js/actions/workflows/cypress.yml/badge.svg?branch=main
 [ci-workflow]: https://github.com/oscarcenteno/cypress-basics-js/actions/workflows/cypress.yml
-[cloud-badge]: https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/x68pip/main&style=flat&logo=cypress
+[cloud-badge]: https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/x68pip/main&style=flat&logo=cypress
 [cloud-project]: https://cloud.cypress.io/projects/x68pip/runs
