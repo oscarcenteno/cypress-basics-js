@@ -1,10 +1,12 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  projectId: "x68pip",
+  projectId: 'x68pip',
   e2e: {
-    setupNodeEvents(on, config) {
+    baseUrl: 'https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#',
+    env: { MY_ENVIRONMENT_VARIABLE: 'test' },
+    setupNodeEvents (on, config) {
       // implement node event listeners here
-    },
-  },
-});
+    }
+  }
+})

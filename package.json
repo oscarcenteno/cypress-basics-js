@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "standard cypress/e2e/integration/**/*.js && cypress run --spec cypress/e2e/integration/**/*.cy.js",
+    "test:all": "cypress run --spec cypress/e2e/**/*.cy.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,11 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.10.0"
+    "cypress": "^12.10.0",
+    "standard": "*"
+  },
+  "standard": {
+    "globals": [ "Cypress", "describe", "it", "cy" ]
   }
+
 }
