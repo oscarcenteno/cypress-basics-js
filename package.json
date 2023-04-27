@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "standard cypress/e2e/integration/**/*.js && cypress run --spec cypress/e2e/integration/**/*.cy.js",
-    "test:all": "cypress run --spec cypress/e2e/**/*.cy.js"
+    "test:all": "cypress run --spec cypress/e2e/**/*.cy.js",
+    "test:firefox": "cypress run --spec cypress/e2e/integration/**/*.cy.js -b firefox"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,7 @@
     "standard": "*"
   },
   "standard": {
-    "globals": [ "Cypress", "describe", "it", "cy" ]
+    "globals": [ "Cypress", "describe", "it", "cy", "expect" ]
   }
 
 }

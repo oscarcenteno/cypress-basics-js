@@ -4,6 +4,7 @@ class PatientForm {
     this.femaleGenderRadiobox = '[for="doctorCheckFemale"]'
     this.dobTextbox = '#DOB_input'
     this.bloodgroupSelect = '#BloodGroup > .e-float-input'
+    this.bloodgroupOption = (group) => `[data-value="${group}"]`
     this.mobileTextbox = '#PatientMobile'
     this.emailTextbox = '#textbox_43'
     this.symptomsTextbox = '#textbox_44'

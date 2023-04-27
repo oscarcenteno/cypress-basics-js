@@ -1,7 +1,7 @@
 class Page {
   constructor () {
     this.searchInput = 'input#schedule_searchbar'
-    this.searchResult = 'div.patient-display div.e-gridcontent table tr td:nth-child(2)'
+    this.patientsList = 'div.patient-display div.e-gridcontent table tr td'
     this.addNewPatientButton = '.patient-operations > .e-control'
   }
 }

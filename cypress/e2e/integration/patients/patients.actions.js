@@ -14,6 +14,7 @@ function addPatient (name) {
   click(addPatientForm.femaleGenderRadiobox)
   clearAndType(addPatientForm.dobTextbox, '01/01/2000')
   click(addPatientForm.bloodgroupSelect)
+  click(addPatientForm.bloodgroupOption('B+'))
   clearAndType(addPatientForm.mobileTextbox, '0123456789')
   clearAndType(addPatientForm.emailTextbox, '1@1.com')
   clearAndType(addPatientForm.symptomsTextbox, 'None')
