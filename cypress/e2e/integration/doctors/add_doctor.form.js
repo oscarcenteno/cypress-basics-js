@@ -1,5 +1,8 @@
-module.exports = {
-  nameTextBox: 'input[name="Name"]',
-  saveButton: '.button-container > :nth-child(2)',
-  emailErrorLabel: 'label#Email-info'
+class Form {
+  constructor () {
+    this.nameTextBox = 'input[name="Name"]'
+    this.saveButton = '.button-container > :nth-child(2)'
+    this.emailErrorLabel = 'label#Email-info'
+  }
 }
+module.exports = new Form()

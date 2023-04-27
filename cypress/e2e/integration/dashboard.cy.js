@@ -3,10 +3,10 @@ const questions = require('./dashboard/dashboard.questions.js')
 
 describe('Dashboard', () => {
   it('Dashboard should have correct title', () => {
-    // Given 'John' went to "dashboard" page
-    actions.openDashboard()
+    // Given 'John' had access to Dashboard module
+    actions.login()
 
-    // Then the title should be expected
+    // Then the Dashboard will be available
     questions.titleShouldContain('APPOINTMENT PLANNER')
   })
 })

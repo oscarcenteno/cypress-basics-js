@@ -1,0 +1,25 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+      "allowJs": true,
+      "target": "ES2017",
+      "experimentalDecorators": true,
+      "checkJs": true,
+      "noEmit": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "types": [
+          "cypress",
+          "node"
+      ]
+  },
+  "include": [
+      "cypress/e2e/integration/**/*.js",
+  ],
+  "exclude": [
+      "node_modules",
+      "framework",
+      "**/*.json"
+  ]
+}

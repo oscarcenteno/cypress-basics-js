@@ -1,10 +1,10 @@
 const { browse } = require('../wrappers/cypress_wrappers')
 const dashboard = require('./dashboard.page')
 
-function openDashboard () {
+function login () {
   browse(dashboard.url)
 }
 
 module.exports = {
-  openDashboard
+  login
 }

@@ -8,6 +8,10 @@ function click (selector) {
   cy.get(selector).click()
 }
 
+function clearAndType (selector, text) {
+  cy.get(selector).clear().type(text)
+}
+
 function type (selector, text) {
   cy.get(selector).type(text)
 }
@@ -48,6 +52,7 @@ module.exports = {
   browse,
   click,
   type,
+  clearAndType,
   clickAndType,
   typeThenPressEnter,
   doubleClick,

@@ -1,3 +1,6 @@
-module.exports = {
-  addButton: '.specialization-types > .e-btn'
+class Form {
+  constructor () {
+    this.addButton = '.specialization-types > .e-btn'
+  }
 }
+module.exports = new Form()
