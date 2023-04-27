@@ -44,6 +44,18 @@ function shouldHaveCSSStyle (selector, style) {
   cy.get(selector).should('have.css', style)
 }
 
+function pageTitleShouldBe (title) {
+  cy.title().should('equal', title)
+}
+
+function tableShouldContainNRows (selector, rows) {
+  cy.get(selector).should('have.length', rows)
+}
+
+function tableRowShouldContain (tableSelector, text) {
+  cy.get(tableSelector).contains(text)
+}
+
 module.exports = {
   shouldEqual,
   shouldContain,
@@ -55,5 +67,8 @@ module.exports = {
   shouldBeVisible,
   shouldNotBeVisible,
   shouldHaveCSSClass,
-  shouldHaveCSSStyle
+  shouldHaveCSSStyle,
+  pageTitleShouldBe,
+  tableShouldContainNRows,
+  tableRowShouldContain
 }
