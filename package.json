@@ -16,11 +16,17 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@reportportal/agent-js-cypress": "^5.1.2",
     "cypress": "^12.10.0",
     "standard": "*"
   },
   "standard": {
-    "globals": [ "Cypress", "describe", "it", "cy", "expect" ]
+    "globals": [
+      "Cypress",
+      "describe",
+      "it",
+      "cy",
+      "expect"
+    ]
   }
-
 }
