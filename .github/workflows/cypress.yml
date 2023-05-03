@@ -7,12 +7,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build MySQL image
-        uses: docker/build-push-action@v2
-        with:
-          context: cypress/e2e/integration/db
-          file: Dockerfile
-          push: false
-          tags: my-mysql-image
+        run: docker build -t my-mysql cypress/e2e/integration/db
+      - name: Start MySQL container
+        run: docker run --name my-mysql-container -p 3306:3306 -d my-mysql"
   cypress-run:
     needs: build
     runs-on: ubuntu-latest
@@ -26,14 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Start MySQL container
-        uses: docker://my-mysql-image:latest
-        with:
-          ports: |
-            3306:3306
-          name: my-mysql-container
-          detach: true
 
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
