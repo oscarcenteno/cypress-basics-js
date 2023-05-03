@@ -2,12 +2,16 @@
 Basic repository to learn cypress features.
 
 ## Includes
-- Github Actions workflow to run Cypress Tests
+- Github Actions workflow to run Cypress Tests (UI, REST API and DB)\
+- Reporting integrated to Cypress cloud, EPAM Report Portal, and local mochawesome reports
 - Configuration for linting and editing in vscode
 - Examples from initial project creation (1-getting-started and 2-advanced-examples)
 - My own tests organizing code into tests, actions, lean page objects (cypress\e2e\integration)
 - Wrappers for Cypress commands and assertions
-- PENDING How to debug tests from vscode.
+- Cypress Api library for having better reporting on API actions
+- Cypress Steps library for creating steps reporting in Cypress runner
+- Docker image for mysql database (cypress\e2e\integration\db) with initializing script and deployment in github actions workflow (cypress.yml)
+- Environment vaiables configuration
 
 ## Usage
 

@@ -16,7 +16,7 @@ const configs = {
     database: 'mydatabase'
   },
   ci: {
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: 'password',
     database: 'mydatabase'
