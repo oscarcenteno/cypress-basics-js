@@ -1,15 +1,6 @@
 name: Cypress Tests
 on: [push]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Build MySQL image
-        run: docker build -t my-mysql cypress/e2e/integration/db
-      - name: Start MySQL container
-        run: docker run --name my-mysql-container -p 3306:3306 -d my-mysql
   cypress-run:
     needs: build
     runs-on: ubuntu-latest
@@ -23,7 +14,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Build MySQL image
+        run: docker build -t my-mysql cypress/e2e/integration/db
+      - name: Start MySQL container
+        run: docker run --name my-mysql-container -p 3306:3306 -d my-mysql
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
