@@ -4,24 +4,24 @@ class ApiEnvironment {
   }
 
   get (relativeUrl) {
-    return cy.request(`${this.baseUrl}${relativeUrl}`)
+    return cy.api(`${this.baseUrl}${relativeUrl}`)
   }
 
   post ({ relativeUrl, body }) {
-    return cy.request('POST', `${this.baseUrl}${relativeUrl}`, body)
+    return cy.api('POST', `${this.baseUrl}${relativeUrl}`, body)
   }
 
   put ({ relativeUrl, body }) {
     console.log(body)
-    return cy.request('PUT', `${this.baseUrl}${relativeUrl}`, body)
+    return cy.api('PUT', `${this.baseUrl}${relativeUrl}`, body)
   }
 
   delete (relativeUrl) {
-    return cy.request('DELETE', `${this.baseUrl}${relativeUrl}`)
+    return cy.api('DELETE', `${this.baseUrl}${relativeUrl}`)
   }
 
   patch ({ relativeUrl, body }) {
-    return cy.request('PATCH', `${this.baseUrl}${relativeUrl}`, body)
+    return cy.api('PATCH', `${this.baseUrl}${relativeUrl}`, body)
   }
 }
 

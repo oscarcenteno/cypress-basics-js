@@ -62,3 +62,60 @@ https://github.com/oscarcenteno/cypress-basics-js/blob/main/.github/workflows/cy
 [ci-workflow]: https://github.com/oscarcenteno/cypress-basics-js/actions/workflows/cypress.yml
 [cloud-badge]: https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/x68pip/main&style=flat&logo=cypress
 [cloud-project]: https://cloud.cypress.io/projects/x68pip/runs
+
+
+## Configuring test runs
+
+- ENV params: CLI, cypress.env.json, cypress.config.js
+- CI run: cypress.yml
+
+
+## Tip: Custom actions
+Cypress runs inside the browser, which is the main difference compared to Selenium-based test automation. That means that Cypress can actually get access to a lot of what’s happening inside of our application.
+
+i.e. clock, spies and stubs for calls to APIs
+
+## Tip: Use cy.session 
+- Login: https://filiphric.com/use-session-instead-of-login-page-object-in-cypress
+
+
+## Tip: App actions to skip doing everything thorugh UI (example with Vue.js)
+https://applitools.com/blog/page-objects-app-actions-cypress/
+
+## Tip:  Use Cypress Plugin API
+https://github.com/filiphric/cypress-plugin-api
+You can now use cy.api() command. This command works exactly like cy.request() but in addition to calling your API, it will print our information about the API call in your Cypress runner.
+
+## Tip: As Selectors use data-cy attributes
+
+https://filiphric.com/how-to-structure-a-big-project-in-cypress
+
+Do not outsource the addition of data-* selectors to developers.
+
+## Tip: Use grep tags to filter tests runs
+
+https://www.npmjs.com/package/@cypress/grep
+
+## Cy Tasks
+
+- For accessing database, here I'm using cy tasks. e2e/integration/db contains a Docker image (Dockerfile), the initialization sql that is done automatically when the Docker image is started, and the database tasks.
+- Those tasks are configured in cypress.config.js and used in the test file db.cy.js. On that tests I delete, insert and select data.
+- docker commands to run tests:
+
+``` bash
+
+npm run docker:build
+npm run docker:run
+
+```
+
+- wait a few seconds before running the first test, since the database init should be ran first.
+
+- For cleanup:
+
+``` bash
+npm run docker:stop
+npm run docker:delete
+docker logs my-mysql-container
+```
+

@@ -40,6 +40,9 @@ module.exports = defineConfig({
     baseUrl: 'https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#',
     env: { MY_ENVIRONMENT_VARIABLE: 'test' },
     setupNodeEvents (on, config) {
+      const tasks = require('./cypress/e2e/integration/db/tasks')
+      on('task', tasks)
+
       if (launch === 'ci') {
         return registerReportPortalPlugin(on, config)
       } else {

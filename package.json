@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "docker:build": "docker build -t my-mysql cypress/e2e/integration/db",
+    "docker:run": "docker run --name my-mysql-container -p 3306:3306 -d my-mysql",
+    "docker:stop": "docker stop my-mysql-container",
+    "docker:remove": "docker rm my-mysql-container ",
     "test": "standard cypress/e2e/integration/**/*.js && cypress run --spec cypress/e2e/integration/**/*.cy.js",
     "test:all": "cypress run --spec cypress/e2e/**/*.cy.js",
-    "test:firefox": "cypress run --spec cypress/e2e/integration/**/*.cy.js -b firefox"
+    "test:firefox": "cypress run --spec cypress/e2e/integration/**/*.cy.js -b firefox",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +25,9 @@
     "@reportportal/agent-js-cypress": "^5.1.2",
     "cypress": "^12.10.0",
     "cypress-mochawesome-reporter": "^3.4.0",
+    "cypress-plugin-api": "^2.11.0",
+    "cypress-plugin-steps": "^1.1.1",
+    "mysql2": "^3.2.4",
     "standard": "*"
   },
   "standard": {
