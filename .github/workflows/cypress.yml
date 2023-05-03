@@ -1,6 +1,17 @@
 name: Cypress Tests
 on: [push]
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build MySQL image
+        uses: docker/build-push-action@v2
+        with:
+          context: cypress/e2e/integration/db
+          file: Dockerfile
+          push: false
+          tags: my-mysql-image
   cypress-run:
     runs-on: ubuntu-latest
     # Runs tests in parallel with matrix strategy https://docs.cypress.io/guides/guides/parallelization
@@ -14,14 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build MySQL image
-        uses: docker/build-push-action@v2
-        with:
-          context: cypress/e2e/integration/db
-          file: Dockerfile
-          push: false
-          tags: my-mysql-image
-
       - name: Start MySQL container
         uses: docker://my-mysql-image:latest
         with:
@@ -29,7 +32,6 @@ jobs:
             3306:3306
           name: my-mysql-container
           detach: true
-        depends-on: Build MySQL image
 
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
