@@ -16,7 +16,7 @@ const configs = {
     database: 'mydatabase'
   },
   ci: {
-    host: 'my-mysql-container',
+    host: 'localhost',
     user: 'root',
     password: 'password',
     database: 'mydatabase'
