@@ -9,7 +9,7 @@ jobs:
       - name: Build MySQL image
         run: docker build -t my-mysql cypress/e2e/integration/db
       - name: Start MySQL container
-        run: docker run --name my-mysql-container -p 3306:3306 -d my-mysql"
+        run: docker run --name my-mysql-container -p 3306:3306 -d my-mysql
   cypress-run:
     needs: build
     runs-on: ubuntu-latest
